@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-# 3-safe_print_division.py
+# 2-safe_print_list_integers.py
 
 
-def safe_print_division(a, b):
-    """return a/b."""
-    try:
-        result = a / b
-    except (TypeError, ZeroDivisionError):
-        result = None
-    finally:
-        print("Inside result: {}".format(result))
-    return (result)
+def safe_print_list_integers(my_list=[], x=0):
+    """print first x int elements of a lst """
+    count = 0
+    for j in range(0, x):
+        try:
+            print("{:d}".format(my_list[j]), end="")
+            count += 1
+        except (ValueError, TypeError):
+            continue
+    print("")
+    return (count)
